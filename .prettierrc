@@ -1,0 +1,22 @@
+{
+	"singleQuote": true,
+	"trailingComma": "all",
+	"semi": true,
+	"printWidth": 120,
+	"tabWidth": 4,
+	"useTabs": true,
+	"arrowParens": "avoid",
+	"importOrder": [
+		"^@angular/(.*)$",
+		"^@constants/(.*)$",
+		"^@components/(.*)$",
+		"^@env/(.*)$",
+		"^@services/(.*)$",
+		"^@shared/(.*)$",
+		"^[./]"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true,
+	"importOrderCaseInsensitive": true,
+	"importOrderParserPlugins": ["classProperties", "decorators-legacy", "typescript"]
+}

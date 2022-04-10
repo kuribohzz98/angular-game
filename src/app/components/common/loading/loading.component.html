@@ -1,0 +1,8 @@
+<ng-container *ngIf="isLoading;else templateLoading">
+    <div class="spinner">
+        <app-spinner-loading></app-spinner-loading>
+    </div>
+</ng-container>
+<ng-template #templateLoading>
+    <ng-content></ng-content>
+</ng-template>

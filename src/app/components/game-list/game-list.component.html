@@ -1,0 +1,38 @@
+<app-loading [isLoading]="isLoading">
+    <div class="row">
+        <div *ngFor="let item of gameList" class="card">
+            <div class="product-image">
+                <!-- badge -->
+                <ng-container *ngIf="item.categories.includes('new');else templateNew">
+                    <div class="ribbon">
+                        <span class="ribbon-content new">New</span>
+                    </div>
+                </ng-container>
+                <ng-template #templateNew>
+                    <ng-container *ngIf="item.categories.includes('top')">
+                        <div class="ribbon">
+                            <span class="ribbon-content top">Top</span>
+                        </div>
+                    </ng-container>
+                </ng-template>
+                <!-- badge -->
+
+                <!-- jackpot number -->
+                <ng-container *ngIf="!!jackpotObj[item.id]">
+                    <p class="jackpot-number">{{jackpotObj[item.id] | currency:'EUR'}} </p>
+                </ng-container>
+                <!-- jackpot number -->
+
+                <img [defaultImage]="defaultImg" [lazyLoad]="'https:' + item.image" alt="" />
+                <div class="info">
+                    <h3>{{item.name}}</h3>
+                    <div class="content">
+                        <button class="btn">
+                            <span>Play</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-loading>

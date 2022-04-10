@@ -1,0 +1,12 @@
+<div class="topnav" id="myTopnav">
+    <ng-container *ngFor="let item of routes">
+        <a [routerLink]="'/' +item.path" [ngClass]="{active: currentPath === item.path}">
+            {{item.name || (item.path[0].toUpperCase() + item.path.slice(1) )}}
+        </a>
+    </ng-container>
+    
+    <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+        <img src="assets/images/menu-btn.png" width="50" height="50" alt="">
+    </a>
+
+</div>
